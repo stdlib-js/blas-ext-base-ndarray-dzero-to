@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,17 +16,21 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { float64ndarray } from '@stdlib/types/ndarray';
 
 /**
-* Fill a one-dimensional double-precision floating-point ndarray with linearly spaced numeric elements which increment by `1` starting from zero.
+* Fills a one-dimensional double-precision floating-point ndarray with linearly spaced numeric elements which increment by `1` starting from zero.
 *
-* @module @stdlib/blas-ext-base-ndarray-dzero-to
+* @param arrays - array-like object containing a one-dimensional input ndarray
+* @returns input ndarray
 *
 * @example
 * var Float64Array = require( '@stdlib/array-float64' );
 * var ndarray = require( '@stdlib/ndarray-base-ctor' );
-* var dzeroTo = require( '@stdlib/blas-ext-base-ndarray-dzero-to' );
 *
 * var xbuf = new Float64Array( [ 0.0, 0.0, 0.0, 0.0 ] );
 * var x = new ndarray( 'float64', xbuf, [ 4 ], [ 1 ], 0, 'row-major' );
@@ -35,12 +39,9 @@
 * var out = dzeroTo( [ x ] );
 * // returns <ndarray>[ 0.0, 1.0, 2.0, 3.0 ]
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function dzeroTo( arrays: [ float64ndarray ] ): float64ndarray;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = dzeroTo;
